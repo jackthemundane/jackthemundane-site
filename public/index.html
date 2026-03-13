@@ -2,25 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jack the Mundane</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack, in the Margins</title>
+  <style>
+    :root {
+      --bg: #f4efe3;
+      --paper: #fbf7ef;
+      --ink: #2c241d;
+      --muted: #6e6257;
+      --line: rgba(44, 36, 29, 0.12);
+      --accent: #8c5a33;
+      --shadow: 0 12px 30px rgba(31, 24, 18, 0.08);
+      --radius: 20px;
+      --max: 840px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.08)),
+        repeating-linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 27px,
+          rgba(44, 36, 29, 0.03) 28px
+        ),
+        var(--bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      width: min(var(--max), 100%);
+      background: linear-gradient(180deg, rgba(251,247,239,0.96), rgba(248,242,231,0.98));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 2px);
+      box-shadow: var(--shadow);
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 10px;
+      background: linear-gradient(180deg, rgba(140,90,51,0.18), rgba(140,90,51,0.04));
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.76rem;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 0 0 0.45rem;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+    }
+
+    .subline {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+    }
+
+    .lede {
+      margin: 0 0 1.5rem;
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.35);
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 1.6rem;
+        border-radius: 18px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="card">
+    <div class="eyebrow">Writer's Notebook</div>
+    <h1>Jack, in the Margins</h1>
+    <p class="subline">writing • worlds • experiments</p>
+    <p class="lede">
+      Jack, in the Margins is where essays, strange little ideas, Sundering Reach lore,
+      and writing experiments live before they become anything bigger.
+    </p>
+    <div class="status">Coming Soon</div>
 
-<div class="container">
-
-<h1>Jack the Mundane</h1>
-
-<p>
-A place for ideas, experiments, writing, and projects that don't quite fit anywhere else.
-</p>
-
-<p class="coming">
-Site under construction. Test.
-</p>
-
-</div>
-
+    <div class="footer">
+      A quiet corner for writing, worldbuilding, and creative tools still taking shape.
+    </div>
+  </main>
 </body>
 </html>
